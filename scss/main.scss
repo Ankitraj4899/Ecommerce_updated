@@ -71,7 +71,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: variables.$breakpoint-tablet) {
     .testimonials {
         padding: 40px 20px;
 
@@ -94,7 +94,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: variables.$breakpoint-mobile) {
     .testimonials {
         width: 100%;
         padding: 35px 16px;

@@ -73,7 +73,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: variables.$breakpoint-tablet) {
     .style {
         padding: 40px 0;
 
@@ -99,7 +99,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: variables.$breakpoint-mobile) {
     .style {
         padding: 20px 0;
 
@@ -262,7 +262,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: variables.$breakpoint-tablet) {
     .arrivals {
         padding: 40px 5%;
 
@@ -279,7 +279,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: variables.$breakpoint-mobile) {
     .arrivals {
         padding: 35px 16px;
 
