@@ -1,0 +1,341 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../components/button";
+
+.style {
+    width: 100%;
+    padding: 50px 0;
+    box-sizing: border-box;
+
+    .container {
+        width: min(1200px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 45px 40px 40px;
+        background-color: #f0f0f0;
+        border-radius: 40px;
+        box-sizing: border-box;
+
+        >h2 {
+            margin: 0 0 35px;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    .style_section {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .style_row {
+        display: grid;
+        gap: 12px;
+    }
+
+    .style_row--top {
+        grid-template-columns: 3fr 7fr;
+    }
+
+    .style_row--bottom {
+        grid-template-columns: 7fr 3fr;
+    }
+
+    .style_card {
+        position: relative;
+        overflow: hidden;
+        height: 175px;
+        background-color: #fff;
+        border-radius: 15px;
+
+        h2 {
+            position: absolute;
+            top: 18px;
+            left: 22px;
+            z-index: 2;
+
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1;
+            color: #000;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .style {
+        padding: 40px 0;
+
+        .container {
+            width: calc(100% - 30px);
+            padding: 40px 25px 30px;
+            border-radius: 30px;
+
+            >h2 {
+                font-size: 34px;
+            }
+        }
+
+        .style_card {
+            height: 160px;
+
+            h2 {
+                top: 16px;
+                left: 18px;
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .style {
+        padding: 20px 0;
+
+        .container {
+            width: calc(100% - 16px);
+            padding: 18px 16px;
+            border-radius: 0;
+
+            >h2 {
+                width: 180px;
+                margin: 0 auto 14px;
+                font-size: 24px;
+                line-height: 1.05;
+                text-align: center;
+            }
+        }
+
+        .style_section {
+            gap: 10px;
+        }
+
+        .style_row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .style_card {
+            width: 100%;
+            height: 113px;
+            border-radius: 12px;
+
+            h2 {
+                top: 14px;
+                left: 14px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+
+// styling for Top selling section
+
+
+
+
+
+
+
+
+
+
+.arrivals {
+    width: 100%;
+    padding: 50px 6%;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+
+    >h2 {
+        margin: 0 0 30px;
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 700;
+        line-height: 1.1;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .arrivals_products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .arrivals_card {
+        min-width: 0;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background-color: #f2f0f0;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin: 10px 0 6px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.3;
+            text-transform: capitalize;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0 0 6px;
+            font-size: 11px;
+            color: #666;
+
+            span {
+                color: #ffc633;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            span {
+                font-size: 17px;
+                font-weight: 700;
+            }
+
+            .line-through {
+                color: #999;
+                text-decoration: line-through;
+                font-weight: 500;
+            }
+
+            .discount {
+                padding: 4px 8px;
+                border: 0;
+                border-radius: 20px;
+                background-color: #ff3333;
+                color: #fff;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .view-all {
+        display: block;
+        width: 130px;
+        height: 40px;
+        margin: 25px auto 0;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .arrivals {
+        padding: 40px 5%;
+
+        .arrivals_products {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 15px;
+        }
+
+        .arrivals_card {
+            img {
+                height: 240px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .arrivals {
+        padding: 35px 16px;
+
+        >h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .arrivals_products {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 10px;
+        }
+
+        .arrivals_card {
+            img {
+                height: 170px;
+                border-radius: 10px;
+            }
+
+            h3 {
+                margin-top: 8px;
+                font-size: 12px;
+            }
+
+            .rating {
+                gap: 3px;
+                font-size: 9px;
+
+                span {
+                    font-size: 11px;
+                    letter-spacing: 0;
+                }
+            }
+
+            .price {
+                gap: 5px;
+
+                span {
+                    font-size: 15px;
+                }
+
+                .line-through {
+                    font-size: 13px;
+                }
+
+                .discount {
+                    padding: 3px 6px;
+                    font-size: 8px;
+                }
+            }
+        }
+
+        .view-all {
+            width: 120px;
+            height: 38px;
+            margin-top: 25px;
+        }
+    }
+}

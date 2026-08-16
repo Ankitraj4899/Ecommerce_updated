@@ -1,0 +1,142 @@
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "base/reset";
+@use "base/typography";
+@use "base/global";
+@use "components/button";
+@use "components/product-card";
+@use "components/cart-item";
+@use "layout/header";
+@use "layout/footer";
+@use "pages/home";
+@use "pages/product";
+@use "pages/cart";
+@use "pages/login";
+
+
+.testimonials {
+    @include mixins.flex-col-center;
+
+    width: 100%;
+    padding: 50px 30px;
+    box-sizing: border-box;
+
+    h2 {
+        width: 100%;
+        margin: 0 0 30px;
+
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .testimonial_card {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+
+        width: 100%;
+        gap: 15px;
+
+        box-sizing: border-box;
+
+        >div {
+            width: calc((100% - 30px) / 3);
+            min-width: 0;
+
+            padding: 20px 24px;
+
+            border: 1px solid #ddd;
+            border-radius: 20px;
+
+            box-sizing: border-box;
+
+            p {
+                margin: 0 0 10px;
+                line-height: 22px;
+            }
+
+            .name {
+                font-weight: 700;
+                color: #000;
+            }
+
+            .card-content {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                color: #00000099;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .testimonials {
+        padding: 40px 20px;
+
+        h2 {
+            font-size: 36px;
+        }
+
+        .testimonial_card {
+            gap: 15px;
+
+            >div {
+                padding: 20px;
+
+                .card-content {
+                    font-size: 13px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonials {
+        width: 100%;
+        padding: 35px 16px;
+
+        align-items: flex-start;
+        box-sizing: border-box;
+
+        h2 {
+            width: 100%;
+            margin-bottom: 25px;
+
+            font-size: 28px;
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .testimonial_card {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+
+        .testimonial_card>div:nth-child(2),
+        .testimonial_card>div:nth-child(3) {
+            display: none;
+        }
+
+        .testimonial_card>div:first-child {
+            display: block;
+
+            width: 100%;
+            height: auto;
+            min-height: 0;
+
+            padding: 22px 20px;
+
+            box-sizing: border-box;
+
+            .card-content {
+                font-size: 13px;
+                line-height: 20px;
+            }
+        }
+    }
+}

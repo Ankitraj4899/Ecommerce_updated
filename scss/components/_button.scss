@@ -1,0 +1,32 @@
+@use "../abstracts/variables";
+
+.hero_content button {
+    width: 210px;
+    height: 52px;
+    border: 0;
+    border-radius: 62px;
+    background: #000;
+    color: #fff;
+    font: 500 16px/1 variables.$font-family, Arial, sans-serif;
+    cursor: pointer;
+}
+
+
+@media (max-width: 640px) {
+    .hero_content button {
+        width: 100%;
+    }
+}
+
+    .view_all_button {
+        width: 210px;
+        height: 52px;
+        border: 1px;
+        border-radius: 62px;
+        background: #0000001A;
+        color: #fff;
+        font: 500 16px/1 variables.$font-family, Arial, sans-serif;
+        cursor: pointer;
+        padding: 16px 54px 16px 54px;
+        gap: 12px;
+    }
