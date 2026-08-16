@@ -4,167 +4,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Details</title>
     <link rel="stylesheet" href="scss/main.css">
 </head>
 
 <body>
+
     <header class="head">
+
         <div class="head_intro">
             <div class="head_context">
-                <p>Sign up and get 20% off to your first order. <a href="/login.html">Sign Up Now</a></p>
+                <p>
+                    Sign up and get 20% off to your first order.
+                    <a href="/login.html">Sign Up Now</a>
+                </p>
             </div>
         </div>
+
         <nav class="main_nav">
-            <div class="hamburger"><img src="assets/icons/hamburger.svg" alt="Menu"></div>
+
+            <div class="hamburger">
+                <img src="assets/icons/hamburger.svg" alt="Menu">
+            </div>
+
             <div class="nav_logo">
                 <h2>SHOP.CO</h2>
             </div>
-            <div class="nav_links"><a href="">Shop</a><a href="">On Sale</a><a href="">New Arrivals</a><a
-                    href="">Brands</a></div>
-            <div class="nav_search"><input type="search" placeholder="Search for products..."></div>
-            <div class="nav_icons"><img src="assets/icons/Frame.svg" alt="Cart"><img src="assets/icons/Vector.svg"
-                    alt="Account"></div>
-        </nav>
 
+            <div class="nav_links">
+                <a href="index.html">Shop</a>
+                <a href="index.html#on_sale">On Sale</a>
+                <a href="index.html#new_arrivals">New Arrivals</a>
+                <a href="">Brands</a>
+            </div>
+
+            <div class="nav_search">
+                <input type="search" placeholder="Search for products...">
+            </div>
+
+            <div class="nav_icons">
+                <a href="/cart.html" id="cart_link"><img src="assets/icons/Frame.svg" alt="Cart"></a>
+                <a href=""><img src="assets/icons/Vector.svg" alt="Account"></a>
+            </div>
+
+        </nav>
 
     </header>
 
 
+    <main>
 
-    <section class="arrivals">
-        <h2>You Might Also Like</h2>
+        <section class="product_details">
 
-        <div class="arrivals_products">
+            <div class="product_details_gallery">
 
-            <div class="arrivals_card">
-                <img src="assets/images/product1.png" alt="Vertical Striped Shirt">
+                <!-- <div class="product_thumbnails">
 
-                <h3>Vertical Striped Shirt</h3>
+                    <img class="thumbnail active" src="" alt="Product thumbnail" id="thumbnail1">
 
-                <p class="rating">
-                    <span>★★★★★</span>
-                    5.0/5
-                </p>
+                    <img class="thumbnail" src="" alt="Product thumbnail" id="thumbnail2">
 
-                <div class="price">
-                    <span>$212</span>
-                    <span class="line-through">$232</span>
-                    <button class="discount">-20%</button>
+                    <img class="thumbnail" src="" alt="Product thumbnail" id="thumbnail3">
+
+                </div> -->
+
+
+                <div class="product_details_image">
+
+                    <img id="productImage" src="" alt="Product">
+
                 </div>
+
             </div>
 
-            <div class="arrivals_card">
-                <img src="assets/images/product2.png" alt="Courage Graphic T-shirt">
 
-                <h3>Courage Graphic T-shirt</h3>
+            <div class="product_details_info">
 
-                <p class="rating">
-                    <span>★★★★</span>
-                    4.0/5
-                </p>
+                <h1 id="productName"></h1>
 
-                <div class="price">
-                    <span>$145</span>
-                </div>
-            </div>
-
-            <div class="arrivals_card">
-                <img src="assets/images/product3.png" alt="Loose Fit Bermuda Shorts">
-
-                <h3>Loose Fit Bermuda Shorts</h3>
 
                 <p class="rating">
-                    <span>★★★</span>
-                    3.0/5
+
+                    <span id="productRating"></span>
+
+                    <span id="ratingValue"></span>
+
                 </p>
 
+
                 <div class="price">
-                    <span>$80</span>
+
+                    <span id="productPrice"></span>
+
+                    <span id="oldPrice" class="line-through">
+                    </span>
+
+                    <button id="discount" class="discount">
+                    </button>
+
                 </div>
-            </div>
 
-            <div class="arrivals_card">
-                <img src="assets/images/product4.png" alt="Faded Skinny Jeans">
 
-                <h3>Faded Skinny Jeans</h3>
-
-                <p class="rating">
-                    <span>★★★★</span>
-                    4.0/5
+                <p class="product_description">
+                    This graphic t-shirt is perfect for any occasion.
+                    Crafted from a soft and breathable fabric, it offers
+                    superior comfort and style.
                 </p>
 
-                <div class="price">
-                    <span>$210</span>
+
+                <div class="product_option">
+
+                    <p>Select Colors</p>
+
+                    <div class="color_options">
+
+                        <button class="color color_one"></button>
+
+                        <button class="color color_two"></button>
+
+                        <button class="color color_three"></button>
+
+                    </div>
+
                 </div>
+
+
+                <div class="product_option">
+
+                    <p>Choose Size</p>
+
+                    <div class="size_options">
+
+                        <button>Small</button>
+
+                        <button>Medium</button>
+
+                        <button class="active">Large</button>
+
+                        <button>X-Large</button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="product_actions">
+
+                    <div class="quantity">
+
+                        <button id="minus">−</button>
+
+                        <span id="quantity">1</span>
+                        <button id="plus">+</button>
+
+                    </div>
+
+                    <button class="add_to_cart">
+                        Add to Cart
+                    </button>
+
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-        <button class="view-all">View All</button>
-    </section>
+
+
+        <section class="arrivals">
+
+            <h2>You Might Also Like</h2>
+
+            <div class="arrivals_products product_recommendations"></div>
+
+            <button class="view-all">
+                View All
+            </button>
+
+        </section>
+    </main>
+
 
     <footer class="footer">
+
         <div class="footer_newsletter">
+
             <h3 class="newsletter_content">
                 STAY UPTO DATE ABOUT<br>
                 OUR LATEST OFFERS
             </h3>
+
             <div class="newsletter_form">
+
                 <input type="email" name="email" id="email" placeholder="Enter your email address">
-                <button>Subscribe to Newsletter</button>
+
+                <button>
+                    Subscribe to Newsletter
+                </button>
+
             </div>
+
         </div>
+
+
         <div class="footer_links">
+
             <div>
+
                 <div class="nav_logo">
                     <h2>SHOP.CO</h2>
                 </div>
-                <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
-                <img src="assets/images/Social.png" alt="">
+
+                <p>
+                    We have clothes that suits your style and
+                    which you’re proud to wear. From women to men.
+                </p>
+
+                <img src="assets/images/Social.png" alt="Social media">
+
             </div>
+
+
             <div>
+
                 <h4>Company</h4>
+
                 <ul>
                     <li>About</li>
                     <li>Features</li>
                     <li>Works</li>
                     <li>Career</li>
                 </ul>
+
             </div>
+
+
             <div>
+
                 <h4>Help</h4>
+
                 <ul>
                     <li>Customer Support</li>
                     <li>Delivery Details</li>
                     <li>Terms & Conditions</li>
                     <li>Privacy policy</li>
                 </ul>
+
             </div>
+
+
             <div>
+
                 <h4>FAQ</h4>
+
                 <ul>
                     <li>Account</li>
                     <li>Manage deliveries</li>
                     <li>Orders</li>
                     <li>Payments</li>
                 </ul>
+
             </div>
+
+
             <div>
+
                 <h4>Resources</h4>
+
                 <ul>
                     <li>Free eBooks</li>
                     <li>Development Tutorial</li>
                     <li>How to-Blog</li>
                     <li>Youtube Playlist</li>
                 </ul>
+
             </div>
+
         </div>
+
+
         <div class="footer_rights">
-            <p>© 2000-2021, All rights reserved</p>
-            <img src="assets/images/Frame 53.png" alt="">
+
+            <p>
+                © 2000-2021, All rights reserved
+            </p>
+
+            <img src="assets/images/Frame 53.png" alt="Payment methods">
+
         </div>
+
     </footer>
+
+
+    <script src="js/products.js"></script>
+    <script src="js/product-details.js"></script>
+    <script src="js/cart.js"></script>
+
 </body>
 
 </html>

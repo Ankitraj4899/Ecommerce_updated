@@ -78,6 +78,46 @@ const topSelling = [
     }
 ];
 
+const youMightAlsoLike = [
+    {
+        id: 9,
+        name: "Vertical Striped Shirt",
+        image: "assets/images/product1.png",
+        rating: "★★★★★",
+        ratingValue: "5.0/5",
+        price: "$212",
+        oldPrice: "$232",
+        discount: "-20%"
+    },
+
+    {
+        id: 10,
+        name: "Courage Graphic T shirt",
+        image: "assets/images/product2.png",
+        rating: "★★★★",
+        ratingValue: "4.0/5",
+        price: "$145"
+    },
+
+    {
+        id: 11,
+        name: "Loose Fit Bermuda Shorts",
+        image: "assets/images/product3.png",
+        rating: "★★★",
+        ratingValue: "3.0/5",
+        price: "$80"
+    },
+
+    {
+        id: 12,
+        name: "Faded Skinny Jeans",
+        image: "assets/images/product4.png",
+        rating: "★★★★",
+        ratingValue: "4.0/5",
+        price: "$210"
+    }
+];
+
 function createProductCard(product) {
     const card = document.createElement("a");
 
@@ -110,7 +150,12 @@ function createProductCard(product) {
             }
         </div>
     `;
-
+card.addEventListener("click", () => {
+        localStorage.setItem(
+            "selectedProduct",
+            JSON.stringify(product)
+        );
+    });
     return card;
 }
 
@@ -127,6 +172,17 @@ if (productsContainers.length == 2) {
 
     topSelling.forEach((product) => {
         productsContainers[1].appendChild(
+            createProductCard(product)
+        );
+    });
+}
+const recommendationsContainer =
+    document.querySelector(".product_recommendations");
+
+if (recommendationsContainer) {
+
+    youMightAlsoLike.forEach((product) => {
+        recommendationsContainer.appendChild(
             createProductCard(product)
         );
     });
