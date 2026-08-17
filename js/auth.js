@@ -1,33 +1,49 @@
 const loginForm = document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+const ADMIN_EMAIL = "admin@gmail.com";
+const ADMIN_PASSWORD = "Admin@123";
 
-    const enteredEmail = document.getElementById("email").value.trim();
-    const enteredPassword = document.getElementById("password").value;
+if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+        const enteredEmail = document
+            .getElementById("email")
+            .value
+            .trim();
 
-    const message = document.getElementById("loginMessage");
+        const enteredPassword =
+            document.getElementById("password").value;
 
-    if (!storedUser) {
-        message.textContent = "No user found.";
-        message.style.color = "red";
-        return;
-    }
+        const message =
+            document.getElementById("loginMessage");
 
-    if (
-        enteredEmail === storedUser.email &&
-        enteredPassword === storedUser.password
-    ) {
-        localStorage.setItem("isLoggedIn", "true");
+        if (
+            enteredEmail === ADMIN_EMAIL &&
+            enteredPassword === ADMIN_PASSWORD
+        ) {
+            localStorage.setItem("isLoggedIn", "true");
 
-        message.textContent = "Login successful!";
-        message.style.color = "green";
+            localStorage.setItem(
+                "loggedInUser",
+                JSON.stringify({
+                    email: ADMIN_EMAIL,
+                    role: "admin"
+                })
+            );
 
-        window.location.href = "index.html";
-    } else {
-        message.textContent = "Invalid email or password.";
-        message.style.color = "red";
-    }
-});
+            message.textContent = "Login successful!";
+            message.style.color = "green";
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 500);
+
+        } else {
+            message.textContent =
+                "Invalid email or password.";
+
+            message.style.color = "red";
+        }
+    });
+}
