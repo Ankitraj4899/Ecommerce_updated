@@ -75,11 +75,7 @@ if (cartContainer) {
 
             cartItem.classList.add("cart_item");
 
-            cartItem.innerHTML = `
-                <img 
-                    src="${product.image}" 
-                    alt="${product.name}"
-                >
+            cartItem.innerHTML = `<img src="${product.image}" alt="${product.name}">
 
                 <div class="cart_item_info">
 
@@ -96,11 +92,9 @@ if (cartContainer) {
     data-index="${index}"
     aria-label="Remove ${product.name}"
 >
-    <img src="assets/icons/frame3.svg" alt="">
+    <img src="assets/icons/Frame3.svg" alt="">
 </button>
-
-                </div>
-            `;
+                </div>`;
 
             cartContainer.appendChild(cartItem);
         });

@@ -1,9 +1,6 @@
 const searchInput = document.querySelector(".searchInput");
 
-const allProducts = [
-    ...newArrivals,
-    ...topSelling
-];
+const allProducts = [...newArrivals,...topSelling];
 
 const newArrivalsContainer = document.querySelector(
     "#new_arrivals .arrivals_products"
