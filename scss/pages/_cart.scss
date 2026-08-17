@@ -204,7 +204,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: variables.$breakpoint-tablet) {
     .cart {
         padding: 25px 5% 50px;
     }
@@ -218,7 +218,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: variables.$breakpoint-mobile) {
     .cart {
         padding: 20px 16px 40px;
 

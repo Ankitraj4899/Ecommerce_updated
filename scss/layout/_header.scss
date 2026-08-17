@@ -121,10 +121,16 @@
 
         .nav_icons {
             display: flex;
+            align-items: center;
             justify-content: flex-start;
             gap: 12px;
+            flex: 0 0 auto;
 
             .nav_icon-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
                 .nav_icon-image {
                     width: 24px;
                     height: 24px;
@@ -229,14 +235,33 @@
     }
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: variables.$breakpoint-tablet) {
+
     .head {
+
         .main_nav {
             gap: 24px;
             width: min(100% - 40px, 1240px);
 
+            .nav_logo {
+                flex: 0 1 150px;
+
+                .nav_logo-title {
+                    width: auto;
+                }
+            }
+
             .nav_links {
                 gap: 14px;
+            }
+
+            .nav_search {
+                min-width: 120px;
+            }
+
+            .nav_icons {
+                gap: 10px;
             }
         }
 
@@ -251,13 +276,17 @@
     }
 }
 
-@media (max-width: 640px) {
+
+@media (max-width: variables.$breakpoint-mobile) {
+
     .head {
+
         .head_intro {
             min-height: 34px;
             padding-inline: 12px;
 
             .head_context {
+
                 .head_context-text {
                     width: auto;
                     font-size: clamp(10px, 2.8vw, 12px);
@@ -266,35 +295,56 @@
             }
         }
 
+
         .main_nav {
             width: calc(100% - 32px);
             min-height: 64px;
-            gap: 16px;
+            gap: 12px;
 
             .hamburger {
                 display: flex;
-            }
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 24px;
 
-            .nav_logo {
-                flex-basis: auto;
-
-                .nav_logo-title {
-                    width: 126px;
-                    height: auto;
-                    font-size: 26px;
+                .hamburger_image {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
                 }
             }
+
+
+            .nav_logo {
+                flex: 0 1 auto;
+                min-width: 0;
+
+                .nav_logo-title {
+                    width: auto;
+                    height: auto;
+                    font-size: 26px;
+                    white-space: nowrap;
+                }
+            }
+
 
             .nav_links {
                 display: none;
             }
 
+
             .nav_search {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
                 flex: 0 0 24px;
+                width: 24px;
                 min-width: 24px;
                 height: 24px;
-                margin-inline-start: 7rem;
+
+                margin-inline-start: auto;
+
                 background: center / 24px 24px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round'%3E%3Ccircle cx='10.8' cy='10.8' r='6.3'/%3E%3Cpath d='m15.5 15.5 4.2 4.2'/%3E%3C/svg%3E");
 
                 .nav_search-input {
@@ -302,10 +352,35 @@
                 }
             }
 
+
             .nav_icons {
-                margin-left: auto;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                gap: 10px;
+
+                flex: 0 0 auto;
+                margin-left: 0;
+
+                .nav_icon-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    flex: 0 0 22px;
+                    width: 22px;
+                    height: 22px;
+
+                    .nav_icon-image {
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
             }
         }
+
 
         .head_hero {
             min-height: 740px;
@@ -365,6 +440,7 @@
                 }
             }
         }
+
 
         .head_logos {
             display: grid;

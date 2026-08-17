@@ -1,4 +1,4 @@
-const cartLink = document.querySelector("#cartLink");
+const cartLink = document.querySelector("#cart_link");
 
 if (cartLink) {
     cartLink.addEventListener("click", (event) => {
@@ -22,34 +22,51 @@ if (cartContainer) {
     const cartDiscount = document.querySelector("#cartDiscount");
     const cartTotal = document.querySelector("#cartTotal");
 
+    const promoCode = document.querySelector("#promoCode");
+    const applyPromo = document.querySelector("#applyPromo");
+
     const deliveryFee = 15;
-    const discountRate = 0.20;
+
+    let appliedCoupons =
+        JSON.parse(localStorage.getItem("appliedCoupons")) || [];
+
+    let couponDiscount = 0;
 
 
-    function updateOrderSummary() {
+    function calculateSubtotal() {
 
         let subtotal = 0;
 
         cart.forEach((product) => {
 
             const price = parseFloat(
-                product.price.replace("$", "")
+                String(product.price).replace("$", "")
             );
 
             subtotal += price * product.quantity;
+
         });
 
-
-        const discount = subtotal * discountRate;
-
-        const total = subtotal - discount + deliveryFee;
+        return subtotal;
+    }
 
 
-        cartSubtotal.textContent = `$${subtotal.toFixed(0)}`;
+    function updateOrderSummary() {
 
-        cartDiscount.textContent = `-$${discount.toFixed(0)}`;
+        const subtotal = calculateSubtotal();
 
-        cartTotal.textContent = `$${total.toFixed(0)}`;
+        const totalDiscount = couponDiscount;
+
+        const total = subtotal - totalDiscount + deliveryFee;
+
+        cartSubtotal.textContent =
+            `$${subtotal.toFixed(0)}`;
+
+        cartDiscount.textContent =
+            `-$${totalDiscount.toFixed(0)}`;
+
+        cartTotal.textContent =
+            `$${Math.max(total, 0).toFixed(0)}`;
     }
 
 
@@ -75,7 +92,11 @@ if (cartContainer) {
 
             cartItem.classList.add("cart_item");
 
-            cartItem.innerHTML = `<img src="${product.image}" alt="${product.name}">
+            cartItem.innerHTML = `
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
 
                 <div class="cart_item_info">
 
@@ -87,29 +108,34 @@ if (cartContainer) {
                         Quantity: ${product.quantity}
                     </p>
 
-                    <button 
-    class="remove_cart_item"
-    data-index="${index}"
-    aria-label="Remove ${product.name}"
->
-    <img src="assets/icons/Frame3.svg" alt="">
-</button>
-                </div>`;
+                    <button
+                        class="remove_cart_item"
+                        data-index="${index}"
+                        aria-label="Remove ${product.name}"
+                    >
+                        <img
+                            src="assets/icons/Frame3.svg"
+                            alt=""
+                        >
+                    </button>
+
+                </div>
+            `;
 
             cartContainer.appendChild(cartItem);
+
         });
 
 
-        const removeButtons = document.querySelectorAll(
-            ".remove_cart_item"
-        );
+        const removeButtons =
+            document.querySelectorAll(".remove_cart_item");
 
 
         removeButtons.forEach((button) => {
 
             button.addEventListener("click", () => {
 
-                const index = button.dataset.index;
+                const index = Number(button.dataset.index);
 
                 cart.splice(index, 1);
 
@@ -127,6 +153,69 @@ if (cartContainer) {
 
         updateOrderSummary();
     }
+
+
+    applyPromo.addEventListener("click", () => {
+
+        const code = promoCode.value
+            .trim()
+            .toLowerCase();
+
+
+        if (code !== "save10" && code !== "save20") {
+
+            alert("Invalid coupon code.");
+            return;
+
+        }
+
+
+        if (appliedCoupons.includes(code)) {
+
+            alert("This coupon has already been used.");
+            return;
+
+        }
+
+
+        const subtotal = calculateSubtotal();
+
+
+        if (subtotal === 0) {
+
+            alert("Your cart is empty.");
+            return;
+
+        }
+
+
+        const discountRate =
+            code === "save10" ? 0.10 : 0.20;
+
+        const discount =
+            subtotal * discountRate;
+
+
+        couponDiscount += discount;
+
+
+        appliedCoupons.push(code);
+
+        localStorage.setItem(
+            "appliedCoupons",
+            JSON.stringify(appliedCoupons)
+        );
+
+
+        promoCode.value = "";
+
+        updateOrderSummary();
+
+        alert(
+            `${code.toUpperCase()} applied successfully!`
+        );
+
+    });
 
 
     displayCart();

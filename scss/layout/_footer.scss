@@ -162,7 +162,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: variables.$breakpoint-tablet) {
     .footer {
         padding: 250px 5% 40px;
 
@@ -208,7 +208,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: variables.$breakpoint-mobile) {
     .footer {
         margin-top: 215px;
         padding: 240px 16px 25px;
