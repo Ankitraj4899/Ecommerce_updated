@@ -22,7 +22,7 @@ const newArrivals = [
     {
         id: 3,
         name: "CHECKERED SHIRT",
-        image: "assets/images/arrival3.png",
+        image: "assets/images/Arrival3.png",
         rating: "★★★",
         ratingValue: "3.0/5",
         price: "$80"
