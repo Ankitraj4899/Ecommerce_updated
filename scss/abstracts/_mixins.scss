@@ -1,7 +1,17 @@
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 @mixin flex-row-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin flex-col-center {
@@ -11,11 +21,10 @@
     align-items: center;
 }
 
-@mixin display-grid{
+@mixin display-grid {
     display: grid;
-    
 }
 
-h2{
+h2 {
     text-align: center;
 }

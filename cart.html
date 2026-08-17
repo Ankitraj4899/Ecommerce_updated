@@ -11,14 +11,13 @@
 </head>
 
 <body>
-
     <header class="head">
 
         <div class="head_intro">
             <div class="head_context">
-                <p>
+                <p class="head_context-text">
                     Sign up and get 20% off to your first order.
-                    <a href="login.html">Sign Up Now</a>
+                    <a class="head_context-link" href="login.html">Sign Up Now</a>
                 </p>
             </div>
         </div>
@@ -26,34 +25,32 @@
         <nav class="main_nav">
 
             <div class="hamburger">
-                <img src="assets/icons/hamburger.svg" alt="Menu">
+                <img class="hamburger-image" src="assets/icons/hamburger.svg" alt="Menu">
             </div>
 
             <div class="nav_logo">
-                <h2>SHOP.CO</h2>
+                <h2 class="nav_logo-title">SHOP.CO</h2>
             </div>
 
             <div class="nav_links">
-                <a href="index.html">Shop</a>
-                <a href="index.html#on_sale">On Sale</a>
-                <a href="index.html#new_arrivals">New Arrivals</a>
-                <a href="">Brands</a>
+                <a class="nav_link" href="index.html">Shop</a>
+                <a class="nav_link" href="index.html#on_sale">On Sale</a>
+                <a class="nav_link" href="index.html#new_arrivals">New Arrivals</a>
+                <a class="nav_link" href="">Brands</a>
             </div>
 
             <div class="nav_search">
-                <input type="search" placeholder="Search for products...">
+                <input class="nav_search-input" type="search" placeholder="Search for products...">
             </div>
 
             <div class="nav_icons">
-
-                <a href="cart.html" id="cartLink">
-                    <img src="assets/icons/Frame.svg" alt="Cart">
+                <a class="nav_icon" href="cart.html" id="cart_link">
+                    <img class="nav_icon-image" src="assets/icons/Frame.svg" alt="Cart">
                 </a>
 
-                <a href="">
-                    <img src="assets/icons/Vector.svg" alt="Account">
+                <a class="nav_icon" href="">
+                    <img class="nav_icon-image" src="assets/icons/Vector.svg" alt="Account">
                 </a>
-
             </div>
 
         </nav>
@@ -126,117 +123,86 @@
     </main>
 
 
+
     <footer class="footer">
-
         <div class="footer_newsletter">
-
             <h3 class="newsletter_content">
                 STAY UPTO DATE ABOUT<br>
                 OUR LATEST OFFERS
             </h3>
 
             <div class="newsletter_form">
+                <input class="newsletter_input" type="email" name="email" id="email"
+                    placeholder="Enter your email address">
 
-                <input type="email" name="email" id="email" placeholder="Enter your email address">
-
-                <button>
+                <button class="newsletter_button">
                     Subscribe to Newsletter
                 </button>
-
             </div>
-
         </div>
-
 
         <div class="footer_links">
-
-            <div>
-
+            <div class="footer_brand">
                 <div class="nav_logo">
-                    <h2>SHOP.CO</h2>
+                    <h2 class="footer_logo">SHOP.CO</h2>
                 </div>
 
-                <p>
-                    We have clothes that suits your style and
-                    which you’re proud to wear. From women to men.
+                <p class="footer_description">
+                    We have clothes that suits your style and which you’re proud to wear. From women to men.
                 </p>
 
-                <img src="assets/images/Social.png" alt="Social media">
-
+                <img class="footer_social" src="assets/images/Social.png" alt="">
             </div>
 
-
-            <div>
-
-                <h4>Company</h4>
-
-                <ul>
-                    <li>About</li>
-                    <li>Features</li>
-                    <li>Works</li>
-                    <li>Career</li>
+            <div class="footer_column">
+                <h4 class="footer_title">Company</h4>
+                <ul class="footer_list">
+                    <li class="footer_item">About</li>
+                    <li class="footer_item">Features</li>
+                    <li class="footer_item">Works</li>
+                    <li class="footer_item">Career</li>
                 </ul>
-
             </div>
 
-
-            <div>
-
-                <h4>Help</h4>
-
-                <ul>
-                    <li>Customer Support</li>
-                    <li>Delivery Details</li>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy policy</li>
+            <div class="footer_column">
+                <h4 class="footer_title">Help</h4>
+                <ul class="footer_list">
+                    <li class="footer_item">Customer Support</li>
+                    <li class="footer_item">Delivery Details</li>
+                    <li class="footer_item">Terms & Conditions</li>
+                    <li class="footer_item">Privacy policy</li>
                 </ul>
-
             </div>
 
-
-            <div>
-
-                <h4>FAQ</h4>
-
-                <ul>
-                    <li>Account</li>
-                    <li>Manage deliveries</li>
-                    <li>Orders</li>
-                    <li>Payments</li>
+            <div class="footer_column">
+                <h4 class="footer_title">FAQ</h4>
+                <ul class="footer_list">
+                    <li class="footer_item">Account</li>
+                    <li class="footer_item">Manage deliveries</li>
+                    <li class="footer_item">Orders</li>
+                    <li class="footer_item">Payments</li>
                 </ul>
-
             </div>
 
-
-            <div>
-
-                <h4>Resources</h4>
-
-                <ul>
-                    <li>Free eBooks</li>
-                    <li>Development Tutorial</li>
-                    <li>How to-Blog</li>
-                    <li>Youtube Playlist</li>
+            <div class="footer_column">
+                <h4 class="footer_title">Resources</h4>
+                <ul class="footer_list">
+                    <li class="footer_item">Free eBooks</li>
+                    <li class="footer_item">Development Tutorial</li>
+                    <li class="footer_item">How to-Blog</li>
+                    <li class="footer_item">Youtube Playlist</li>
                 </ul>
-
             </div>
-
         </div>
 
-
         <div class="footer_rights">
-
-            <p>
+            <p class="footer_rights-text">
                 © 2000-2021, All rights reserved
             </p>
 
-            <img src="assets/images/Frame 53.png" alt="Payment methods">
-
+            <img class="footer_rights-image" src="assets/images/Frame 53.png" alt="">
         </div>
-
     </footer>
-
-
     <script src="js/cart.js"></script>
 
 </body>

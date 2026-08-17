@@ -237,8 +237,8 @@
                 padding: 4px 8px;
                 border: 0;
                 border-radius: 20px;
-                background-color: #ff3333;
-                color: #fff;
+                background-color: variables.$discount-bg-color;
+                color: variables.$discount-color;
                 font-size: 10px;
             }
         }
@@ -251,13 +251,13 @@
         margin: 25px auto 0;
         border: 1px solid #ddd;
         border-radius: 25px;
-        background-color: #fff;
-        color: #000;
+        background-color: variables.$white-color;
+        color: variables.$black-color;
         cursor: pointer;
 
         &:hover {
-            background-color: #000;
-            color: #fff;
+            background-color: variables.$black-color;
+            color: variables.$white-color;
         }
     }
 }
