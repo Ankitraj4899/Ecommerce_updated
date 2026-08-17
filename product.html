@@ -61,7 +61,7 @@
 
     <main>
 
-        <section class="product_details">
+        <!-- <section class="product_details">
 
             <div class="product_details_gallery">
 
@@ -165,10 +165,120 @@
 
             </div>
 
+        </section> -->
+
+        <section class="product_details">
+
+            <div class="product_details_gallery">
+
+                <div class="product_details_image">
+                    <img class="product_details_image-element" id="productImage" src="" alt="Product">
+                </div>
+
+            </div>
+
+            <div class="product_details_info">
+
+                <h1 class="product_details_title" id="productName"></h1>
+
+                <div class="product_rating">
+                    <span class="product_rating-stars" id="productRating"></span>
+                    <span class="product_rating-value" id="ratingValue"></span>
+                </div>
+
+                <div class="product_price">
+
+                    <span class="product_price-current" id="productPrice"></span>
+
+                    <span class="product_price-old line-through" id="oldPrice"></span>
+
+                    <button class="product_discount" id="discount"></button>
+
+                </div>
+
+                <p class="product_description">
+                    This graphic t-shirt is perfect for any occasion.
+                    Crafted from a soft and breathable fabric, it offers
+                    superior comfort and style.
+                </p>
+
+                <div class="product_option product_color-option">
+
+                    <p class="product_option-title">
+                        Select Colors
+                    </p>
+
+                    <div class="color_options">
+
+                        <button class="color color_one" type="button"></button>
+
+                        <button class="color color_two" type="button"></button>
+
+                        <button class="color color_three" type="button"></button>
+
+                    </div>
+
+                </div>
+
+                <div class="product_option product_size-option">
+
+                    <p class="product_option-title">
+                        Choose Size
+                    </p>
+
+                    <div class="size_options">
+
+                        <button class="size_option" type="button">
+                            Small
+                        </button>
+
+                        <button class="size_option" type="button">
+                            Medium
+                        </button>
+
+                        <button class="size_option active" type="button">
+                            Large
+                        </button>
+
+                        <button class="size_option" type="button">
+                            X-Large
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="product_actions">
+
+                    <div class="quantity">
+
+                        <button class="quantity_button quantity_minus" id="minus" type="button">
+                            −
+                        </button>
+
+                        <span class="quantity_value" id="quantity">
+                            1
+                        </span>
+
+                        <button class="quantity_button quantity_plus" id="plus" type="button">
+                            +
+                        </button>
+
+                    </div>
+
+                    <button class="add_to_cart" type="button">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
         </section>
 
 
-        <section class="product_reviews">
+
+        <!-- <section class="product_reviews">
 
             <div class="product_reviews_header">
 
@@ -388,9 +498,237 @@
                 Load More Reviews
             </button>
 
+        </section> -->
+
+
+
+        <section class="product_reviews">
+
+            <div class="product_reviews_header">
+
+                <h2 class="product_reviews_title">
+                    All Reviews
+                    <span class="product_reviews_count">&lpar; 451 &rpar;</span>
+                </h2>
+
+                <div class="review_actions">
+
+                    <button class="filter_button" type="button">
+                        <img class="filter_button_icon" src="assets/icons/Frame1.svg" alt="">
+                    </button>
+
+                    <button class="sort_button" type="button">
+                        Latest
+                        <span class="sort_button_icon">
+                            <img class="sort_icon" src="assets/icons/Frame2.svg" alt="">
+                        </span>
+                    </button>
+
+                    <button class="write_review" type="button">
+                        Write a Review
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="reviews_grid">
+
+                <article class="review_card">
+
+                    <div class="review_top">
+
+                        <div class="review_stars">
+                            ★★★★★
+                        </div>
+
+                        <button class="review_menu" type="button" aria-label="Review options">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <h3 class="review_name">
+                        Samantha D.
+                        <span class="verified">✓</span>
+                    </h3>
+
+                    <p class="review_text">
+                        "I absolutely love this t-shirt! The design is unique
+                        and the fabric feels so comfortable. As a fellow designer,
+                        I appreciate the attention to detail. It has become my
+                        favorite go-to shirt."
+                    </p>
+
+                    <small class="review_date">
+                        Posted on August 14, 2023
+                    </small>
+
+                </article>
+
+                <article class="review_card">
+
+                    <div class="review_top">
+
+                        <div class="review_stars">
+                            ★★★★
+                        </div>
+
+                        <button class="review_menu" type="button" aria-label="Review options">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <h3 class="review_name">
+                        Alex M.
+                        <span class="verified">✓</span>
+                    </h3>
+
+                    <p class="review_text">
+                        "The t-shirt exceeded my expectations! The colors are
+                        vibrant and the print quality is top-notch. Being a UI/UX
+                        designer myself, I'm quite picky about aesthetics, and
+                        this t-shirt definitely gets a thumbs up from me."
+                    </p>
+
+                    <small class="review_date">
+                        Posted on August 15, 2023
+                    </small>
+
+                </article>
+
+                <article class="review_card">
+
+                    <div class="review_top">
+
+                        <div class="review_stars">
+                            ★★★★
+                        </div>
+
+                        <button class="review_menu" type="button" aria-label="Review options">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <h3 class="review_name">
+                        Ethan R.
+                        <span class="verified">✓</span>
+                    </h3>
+
+                    <p class="review_text">
+                        "This t-shirt is a must-have for anyone who appreciates
+                        good design. The minimalist yet stylish pattern caught
+                        my eye, and the fit is perfect."
+                    </p>
+
+                    <small class="review_date">
+                        Posted on August 16, 2023
+                    </small>
+
+                </article>
+
+                <article class="review_card">
+
+                    <div class="review_top">
+
+                        <div class="review_stars">
+                            ★★★★
+                        </div>
+
+                        <button class="review_menu" type="button" aria-label="Review options">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <h3 class="review_name">
+                        Olivia P.
+                        <span class="verified">✓</span>
+                    </h3>
+
+                    <p class="review_text">
+                        "As a UI/UX enthusiast, I value simplicity and
+                        functionality. This t-shirt represents those principles
+                        but also feels great to wear."
+                    </p>
+
+                    <small class="review_date">
+                        Posted on August 17, 2023
+                    </small>
+
+                </article>
+
+                <article class="review_card">
+
+                    <div class="review_top">
+
+                        <div class="review_stars">
+                            ★★★★★
+                        </div>
+
+                        <button class="review_menu" type="button" aria-label="Review options">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <h3 class="review_name">
+                        Liam K.
+                        <span class="verified">✓</span>
+                    </h3>
+
+                    <p class="review_text">
+                        "This t-shirt is a fusion of comfort and creativity.
+                        The fabric is soft, and the design speaks volumes about
+                        the designer's skill."
+                    </p>
+
+                    <small class="review_date">
+                        Posted on August 18, 2023
+                    </small>
+
+                </article>
+
+                <article class="review_card">
+
+                    <div class="review_top">
+
+                        <div class="review_stars">
+                            ★★★★★
+                        </div>
+
+                        <button class="review_menu" type="button" aria-label="Review options">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <h3 class="review_name">
+                        Ava H.
+                        <span class="verified">✓</span>
+                    </h3>
+
+                    <p class="review_text">
+                        "I'm not just wearing a t-shirt; I'm wearing a piece
+                        of design philosophy. The intricate details and thoughtful
+                        layout make this shirt a conversation starter."
+                    </p>
+
+                    <small class="review_date">
+                        Posted on August 19, 2023
+                    </small>
+
+                </article>
+
+            </div>
+
+            <button class="load_reviews" type="button">
+                Load More Reviews
+            </button>
+
         </section>
-
-
 
         <section class="arrivals">
 

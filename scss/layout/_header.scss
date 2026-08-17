@@ -94,7 +94,7 @@
                 padding: 0.8em 1em 0.8em 2.75em;
                 border: 0;
                 border-radius: 3em;
-                background: #f0f0f0;
+                background: variables.$bg-gray;
                 color: variables.$black-color;
                 font: inherit;
 
@@ -171,7 +171,7 @@
             .hero_description {
                 max-width: 545px;
                 margin: 32px 0;
-                color: #666;
+                color: variables.$text-gray;
                 font-family: variables.$font-family;
                 font-size: 16px;
                 line-height: 22px;
@@ -202,7 +202,7 @@
 
                 .hero_stat-text {
                     margin: 8px 0 0;
-                    color: #666;
+                    color: variables.$text-gray;
                     font-size: 16px;
                     line-height: 22px;
                 }
@@ -217,7 +217,7 @@
         gap: 24px;
         min-height: 122px;
         padding: 24px max(32px, calc((100% - 1240px) / 2));
-        background: #000;
+        background: variables.$black-color;
 
         .head_logo {
             .head_logo-image {

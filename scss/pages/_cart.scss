@@ -1,3 +1,7 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../components/button";
+
 .cart {
     padding: 20px 7% 60px;
 
@@ -43,7 +47,7 @@
         height: 90px;
         object-fit: cover;
         border-radius: 10px;
-        background-color: #f0f0f0;
+        background-color: variables.$bg-gray;
     }
 }
 
@@ -61,7 +65,7 @@
     p {
         margin: 3px 0;
         font-size: 11px;
-        color: #666;
+        color: variables.$text-gray;
     }
 
     p:nth-of-type(1) {
@@ -114,7 +118,7 @@
     margin-bottom: 14px;
 
     span:first-child {
-        color: #666;
+        color: variables.$text-gray;
         font-size: 14px;
     }
 
@@ -156,7 +160,7 @@
 
         border: none;
         border-radius: 22px;
-        background-color: #f0f0f0;
+        background-color: variables.$bg-gray;
 
         font-size: 13px;
         outline: none;
