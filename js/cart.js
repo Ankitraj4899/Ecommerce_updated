@@ -18,13 +18,56 @@ if (cartContainer) {
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    if (cart.length === 0) {
+    const cartSubtotal = document.querySelector("#cartSubtotal");
+    const cartDiscount = document.querySelector("#cartDiscount");
+    const cartTotal = document.querySelector("#cartTotal");
 
-        cartContainer.innerHTML = `
-            <p>Your cart is empty.</p>
-        `;
+    const deliveryFee = 15;
+    const discountRate = 0.20;
 
-    } else {
+
+    function updateOrderSummary() {
+
+        let subtotal = 0;
+
+        cart.forEach((product) => {
+
+            const price = parseFloat(
+                product.price.replace("$", "")
+            );
+
+            subtotal += price * product.quantity;
+        });
+
+
+        const discount = subtotal * discountRate;
+
+        const total = subtotal - discount + deliveryFee;
+
+
+        cartSubtotal.textContent = `$${subtotal.toFixed(0)}`;
+
+        cartDiscount.textContent = `-$${discount.toFixed(0)}`;
+
+        cartTotal.textContent = `$${total.toFixed(0)}`;
+    }
+
+
+    function displayCart() {
+
+        cartContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+
+            cartContainer.innerHTML = `
+                <p>Your cart is empty.</p>
+            `;
+
+            updateOrderSummary();
+
+            return;
+        }
+
 
         cart.forEach((product, index) => {
 
@@ -49,11 +92,12 @@ if (cartContainer) {
                     </p>
 
                     <button 
-                        class="remove_cart_item"
-                        data-index="${index}"
-                    >
-                        Remove
-                    </button>
+    class="remove_cart_item"
+    data-index="${index}"
+    aria-label="Remove ${product.name}"
+>
+    <img src="assets/icons/frame3.svg" alt="">
+</button>
 
                 </div>
             `;
@@ -65,6 +109,7 @@ if (cartContainer) {
         const removeButtons = document.querySelectorAll(
             ".remove_cart_item"
         );
+
 
         removeButtons.forEach((button) => {
 
@@ -79,9 +124,16 @@ if (cartContainer) {
                     JSON.stringify(cart)
                 );
 
-                location.reload();
+                displayCart();
+
             });
 
         });
+
+
+        updateOrderSummary();
     }
+
+
+    displayCart();
 }
