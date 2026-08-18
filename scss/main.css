@@ -172,13 +172,13 @@ h3 {
   cursor: pointer;
 }
 .product_details .product_details_info .product_option .color_options .color_one {
-  background-color: #5c5138;
+  background-color: #4F4631;
 }
 .product_details .product_details_info .product_option .color_options .color_two {
-  background-color: #315752;
+  background-color: #314F4A;
 }
 .product_details .product_details_info .product_option .color_options .color_three {
-  background-color: #30364f;
+  background-color: #314F4A;
 }
 .product_details .product_details_info .product_option .size_options {
   display: flex;
