@@ -2,6 +2,8 @@ const loginForm = document.getElementById("loginForm");
 
 const ADMIN_EMAIL = "admin@gmail.com";
 const ADMIN_PASSWORD = "Admin@123";
+const signupLink = document.querySelector(".head_context-link");
+
 
 if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
@@ -44,6 +46,20 @@ if (loginForm) {
                 "Invalid email or password.";
 
             message.style.color = "red";
+        }
+    });
+}
+
+if (signupLink) {
+    signupLink.addEventListener("click", (event) => {
+
+        const isLoggedIn =
+            localStorage.getItem("isLoggedIn") === "true";
+
+        if (isLoggedIn) {
+            event.preventDefault();
+
+            window.location.href = "index.html";
         }
     });
 }

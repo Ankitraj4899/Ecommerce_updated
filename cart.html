@@ -8,9 +8,16 @@
     <title>Cart</title>
 
     <link rel="stylesheet" href="scss/main.css">
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 
 <body>
+
+
     <header class="head">
 
         <div class="head_intro">
@@ -204,7 +211,7 @@
         </div>
     </footer>
     <script src="js/cart.js"></script>
-
+    <script src="js/auth.js"></script>
 </body>
 
 </html>
