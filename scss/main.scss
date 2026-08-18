@@ -1,13 +1,18 @@
+@use "abstracts/functions" as fn;
 @use "abstracts/variables";
 @use "abstracts/mixins";
+
 @use "base/reset";
 @use "base/typography";
 @use "base/global";
+
 @use "components/button";
 @use "components/product-card";
 @use "components/cart-item";
+
 @use "layout/header";
 @use "layout/footer";
+
 @use "pages/home";
 @use "pages/product";
 @use "pages/cart";
@@ -18,14 +23,14 @@
     @include mixins.flex-col-center;
 
     width: 100%;
-    padding: 50px 30px;
+    padding: fn.rem(50) fn.rem(30);
     box-sizing: border-box;
 
     h2 {
         width: 100%;
-        margin: 0 0 30px;
+        margin: 0 0 fn.rem(30);
 
-        font-size: clamp(28px, 4vw, 48px);
+        font-size: clamp(fn.rem(28), 4vw, fn.rem(48));
         font-weight: 700;
         text-align: left;
     }
@@ -36,24 +41,24 @@
         align-items: stretch;
 
         width: 100%;
-        gap: 15px;
+        gap: fn.rem(15);
 
         box-sizing: border-box;
 
         >div {
-            width: calc((100% - 30px) / 3);
+            width: calc((100% - fn.rem(30)) / 3);
             min-width: 0;
 
-            padding: 20px 24px;
+            padding: fn.rem(20) fn.rem(24);
 
             border: 1px solid #ddd;
-            border-radius: 20px;
+            border-radius: fn.rem(20);
 
             box-sizing: border-box;
 
             p {
-                margin: 0 0 10px;
-                line-height: 22px;
+                margin: 0 0 fn.rem(10);
+                line-height: fn.rem(22);
             }
 
             .name {
@@ -62,51 +67,55 @@
             }
 
             .card-content {
-                font-size: 14px;
+                font-size: fn.rem(14);
                 font-weight: 400;
-                line-height: 20px;
+                line-height: fn.rem(20);
                 color: #00000099;
             }
         }
     }
 }
 
+
 @media (max-width: variables.$breakpoint-tablet) {
+
     .testimonials {
-        padding: 40px 20px;
+        padding: fn.rem(40) fn.rem(20);
 
         h2 {
-            font-size: 36px;
+            font-size: fn.rem(36);
         }
 
         .testimonial_card {
-            gap: 15px;
+            gap: fn.rem(15);
 
             >div {
-                padding: 20px;
+                padding: fn.rem(20);
 
                 .card-content {
-                    font-size: 13px;
-                    line-height: 19px;
+                    font-size: fn.rem(13);
+                    line-height: fn.rem(19);
                 }
             }
         }
     }
 }
 
+
 @media (max-width: variables.$breakpoint-mobile) {
+
     .testimonials {
         width: 100%;
-        padding: 35px 16px;
+        padding: fn.rem(35) fn.rem(16);
 
         align-items: flex-start;
         box-sizing: border-box;
 
         h2 {
             width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: fn.rem(25);
 
-            font-size: 28px;
+            font-size: fn.rem(28);
             line-height: 1.1;
             text-align: left;
         }
@@ -129,13 +138,13 @@
             height: auto;
             min-height: 0;
 
-            padding: 22px 20px;
+            padding: fn.rem(22) fn.rem(20);
 
             box-sizing: border-box;
 
             .card-content {
-                font-size: 13px;
-                line-height: 20px;
+                font-size: fn.rem(13);
+                line-height: fn.rem(20);
             }
         }
     }

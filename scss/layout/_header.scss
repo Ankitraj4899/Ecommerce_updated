@@ -1,3 +1,4 @@
+@use "../abstracts/functions" as fn;
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 @use "../components/button";
@@ -8,21 +9,21 @@
 
     .head_intro {
         display: grid;
-        min-height: 38px;
+        min-height: fn.rem(38);
         width: 100%;
         place-items: center;
-        padding-inline: 16px;
+        padding-inline: fn.rem(16);
         background: variables.$black-color;
         color: variables.$white-color;
 
         .head_context {
             .head_context-text {
-                width: 351px;
+                width: fn.rem(351);
                 max-width: 100%;
                 margin: 0;
-                font-size: 14px;
+                font-size: fn.rem(14);
                 font-weight: 500;
-                line-height: 19px;
+                line-height: fn.rem(19);
                 text-align: center;
                 white-space: nowrap;
             }
@@ -37,30 +38,30 @@
     .main_nav {
         display: flex;
         align-items: center;
-        gap: 40px;
-        width: min(100% - 64px, 1240px);
-        min-height: 96px;
+        gap: fn.rem(40);
+        width: min(calc(100% - fn.rem(64)), fn.rem(1240));
+        min-height: fn.rem(96);
         margin-inline: auto;
 
         .hamburger {
             display: none;
-            flex: 0 0 24px;
+            flex: 0 0 fn.rem(24);
 
             .hamburger_image {
                 display: block;
-                width: 24px;
-                height: 24px;
+                width: fn.rem(24);
+                height: fn.rem(24);
             }
         }
 
         .nav_logo {
-            flex: 0 0 159px;
+            flex: 0 0 fn.rem(159);
 
             .nav_logo-title {
-                width: 159px;
-                height: 24px;
+                width: fn.rem(159);
+                height: fn.rem(24);
                 margin: 0;
-                font-size: 32px;
+                font-size: fn.rem(32);
                 font-weight: 700;
                 line-height: 100%;
                 letter-spacing: 0%;
@@ -71,13 +72,13 @@
         .nav_links {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: fn.rem(24);
             white-space: nowrap;
 
             .nav_link {
                 color: inherit;
-                font-size: 16px;
-                line-height: 22px;
+                font-size: fn.rem(16);
+                line-height: fn.rem(22);
                 text-decoration: none;
             }
         }
@@ -85,7 +86,7 @@
         .nav_search {
             position: relative;
             flex: 1;
-            min-width: 160px;
+            min-width: fn.rem(160);
 
             .nav_search-input {
                 width: 100%;
@@ -123,7 +124,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            gap: 12px;
+            gap: fn.rem(12);
             flex: 0 0 auto;
 
             .nav_icon-link {
@@ -132,8 +133,8 @@
                 justify-content: center;
 
                 .nav_icon-image {
-                    width: 24px;
-                    height: 24px;
+                    width: fn.rem(24);
+                    height: fn.rem(24);
                 }
             }
         }
@@ -141,7 +142,7 @@
 
     .head_hero {
         position: relative;
-        min-height: 663px;
+        min-height: fn.rem(663);
         overflow: hidden;
         background: #f2f0f1;
 
@@ -158,29 +159,29 @@
         .hero_stats {
             position: relative;
             z-index: 1;
-            width: min(100% - 64px, 1240px);
+            width: min(calc(100% - fn.rem(64)), fn.rem(1240));
             margin-inline: auto;
         }
 
         .hero_content {
-            padding-top: 103px;
+            padding-top: fn.rem(103);
 
             .hero_title {
-                max-width: 580px;
+                max-width: fn.rem(580);
                 margin: 0;
                 font-family: variables.$font-family-heading;
-                font-size: clamp(42px, 4.45vw, 64px);
+                font-size: clamp(fn.rem(42), 4.45vw, fn.rem(64));
                 line-height: 1.2;
                 letter-spacing: 0%;
             }
 
             .hero_description {
-                max-width: 545px;
-                margin: 32px 0;
+                max-width: fn.rem(545);
+                margin: fn.rem(32) 0;
                 color: variables.$text-gray;
                 font-family: variables.$font-family;
-                font-size: 16px;
-                line-height: 22px;
+                font-size: fn.rem(16);
+                line-height: fn.rem(22);
                 font-weight: 400;
                 letter-spacing: 0%;
             }
@@ -188,11 +189,11 @@
 
         .hero_stats {
             display: flex;
-            gap: 32px;
-            margin-top: 48px;
+            gap: fn.rem(32);
+            margin-top: fn.rem(48);
 
             .hero_stat {
-                padding-right: 32px;
+                padding-right: fn.rem(32);
                 border-right: 1px solid #0000001a;
 
                 &:last-child {
@@ -202,15 +203,15 @@
 
                 .hero_stat-number {
                     margin: 0;
-                    font-size: 40px;
+                    font-size: fn.rem(40);
                     line-height: 1;
                 }
 
                 .hero_stat-text {
-                    margin: 8px 0 0;
+                    margin: fn.rem(8) 0 0;
                     color: variables.$text-gray;
-                    font-size: 16px;
-                    line-height: 22px;
+                    font-size: fn.rem(16);
+                    line-height: fn.rem(22);
                 }
             }
         }
@@ -220,9 +221,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 24px;
-        min-height: 122px;
-        padding: 24px max(32px, calc((100% - 1240px) / 2));
+        gap: fn.rem(24);
+        min-height: fn.rem(122);
+        padding: fn.rem(24) max(fn.rem(32), calc((100% - fn.rem(1240)) / 2));
         background: variables.$black-color;
 
         .head_logo {
@@ -241,11 +242,11 @@
     .head {
 
         .main_nav {
-            gap: 24px;
-            width: min(100% - 40px, 1240px);
+            gap: fn.rem(24);
+            width: min(calc(100% - fn.rem(40)), fn.rem(1240));
 
             .nav_logo {
-                flex: 0 1 150px;
+                flex: 0 1 fn.rem(150);
 
                 .nav_logo-title {
                     width: auto;
@@ -253,24 +254,24 @@
             }
 
             .nav_links {
-                gap: 14px;
+                gap: fn.rem(14);
             }
 
             .nav_search {
-                min-width: 120px;
+                min-width: fn.rem(120);
             }
 
             .nav_icons {
-                gap: 10px;
+                gap: fn.rem(10);
             }
         }
 
         .head_hero {
-            min-height: 600px;
+            min-height: fn.rem(600);
 
             .hero_content,
             .hero_stats {
-                width: min(100% - 40px, 1240px);
+                width: min(calc(100% - fn.rem(40)), fn.rem(1240));
             }
         }
     }
@@ -282,35 +283,35 @@
     .head {
 
         .head_intro {
-            min-height: 34px;
-            padding-inline: 12px;
+            min-height: fn.rem(34);
+            padding-inline: fn.rem(12);
 
             .head_context {
 
                 .head_context-text {
                     width: auto;
-                    font-size: clamp(10px, 2.8vw, 12px);
-                    line-height: 16px;
+                    font-size: clamp(fn.rem(10), 2.8vw, fn.rem(12));
+                    line-height: fn.rem(16);
                 }
             }
         }
 
 
         .main_nav {
-            width: calc(100% - 32px);
-            min-height: 64px;
-            gap: 12px;
+            width: calc(100% - fn.rem(32));
+            min-height: fn.rem(64);
+            gap: fn.rem(12);
 
             .hamburger {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                flex: 0 0 24px;
+                flex: 0 0 fn.rem(24);
 
                 .hamburger_image {
                     display: block;
-                    width: 24px;
-                    height: 24px;
+                    width: fn.rem(24);
+                    height: fn.rem(24);
                 }
             }
 
@@ -322,7 +323,7 @@
                 .nav_logo-title {
                     width: auto;
                     height: auto;
-                    font-size: 26px;
+                    font-size: fn.rem(26);
                     white-space: nowrap;
                 }
             }
@@ -338,14 +339,14 @@
                 align-items: center;
                 justify-content: center;
 
-                flex: 0 0 24px;
-                width: 24px;
-                min-width: 24px;
-                height: 24px;
+                flex: 0 0 fn.rem(24);
+                width: fn.rem(24);
+                min-width: fn.rem(24);
+                height: fn.rem(24);
 
                 margin-inline-start: auto;
 
-                background: center / 24px 24px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round'%3E%3Ccircle cx='10.8' cy='10.8' r='6.3'/%3E%3Cpath d='m15.5 15.5 4.2 4.2'/%3E%3C/svg%3E");
+                background: center / fn.rem(24) fn.rem(24) no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round'%3E%3Ccircle cx='10.8' cy='10.8' r='6.3'/%3E%3Cpath d='m15.5 15.5 4.2 4.2'/%3E%3C/svg%3E");
 
                 .nav_search-input {
                     display: none;
@@ -358,7 +359,7 @@
                 align-items: center;
                 justify-content: flex-end;
 
-                gap: 10px;
+                gap: fn.rem(10);
 
                 flex: 0 0 auto;
                 margin-left: 0;
@@ -368,14 +369,14 @@
                     align-items: center;
                     justify-content: center;
 
-                    flex: 0 0 22px;
-                    width: 22px;
-                    height: 22px;
+                    flex: 0 0 fn.rem(22);
+                    width: fn.rem(22);
+                    height: fn.rem(22);
 
                     .nav_icon-image {
                         display: block;
-                        width: 22px;
-                        height: 22px;
+                        width: fn.rem(22);
+                        height: fn.rem(22);
                     }
                 }
             }
@@ -383,59 +384,59 @@
 
 
         .head_hero {
-            min-height: 740px;
+            min-height: fn.rem(740);
 
             .hero_image {
                 top: auto;
-                height: 390px;
+                height: fn.rem(390);
                 object-position: 60% bottom;
             }
 
             .hero_content,
             .hero_stats {
-                width: calc(100% - 32px);
+                width: calc(100% - fn.rem(32));
             }
 
             .hero_content {
-                padding-top: 40px;
+                padding-top: fn.rem(40);
 
                 .hero_title {
-                    max-width: 340px;
-                    font-size: 36px;
+                    max-width: fn.rem(340);
+                    font-size: fn.rem(36);
                     letter-spacing: -1px;
                 }
 
                 .hero_description {
-                    margin: 20px 0 24px;
-                    font-size: 14px;
-                    line-height: 20px;
+                    margin: fn.rem(20) 0 fn.rem(24);
+                    font-size: fn.rem(14);
+                    line-height: fn.rem(20);
                 }
             }
 
             .hero_stats {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 12px 0;
-                margin-top: 24px;
+                gap: fn.rem(12) 0;
+                margin-top: fn.rem(24);
 
                 .hero_stat {
-                    padding: 0 16px;
+                    padding: 0 fn.rem(16);
 
                     &:nth-child(3) {
                         flex-basis: 100%;
-                        padding: 12px 0 0;
+                        padding: fn.rem(12) 0 0;
                         border: 0;
                         text-align: center;
                     }
 
                     .hero_stat-number {
-                        font-size: 24px;
+                        font-size: fn.rem(24);
                     }
 
                     .hero_stat-text {
-                        margin-top: 4px;
-                        font-size: 12px;
-                        line-height: 16px;
+                        margin-top: fn.rem(4);
+                        font-size: fn.rem(12);
+                        line-height: fn.rem(16);
                     }
                 }
             }
@@ -445,17 +446,17 @@
         .head_logos {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            min-height: 146px;
-            gap: 20px 28px;
-            padding: 28px 16px;
+            min-height: fn.rem(146);
+            gap: fn.rem(20) fn.rem(28);
+            padding: fn.rem(28) fn.rem(16);
 
             .head_logo {
                 display: grid;
                 place-items: center;
 
                 .head_logo-image {
-                    max-width: 100px;
-                    max-height: 25px;
+                    max-width: fn.rem(100);
+                    max-height: fn.rem(25);
                 }
             }
         }

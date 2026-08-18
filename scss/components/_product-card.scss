@@ -1,16 +1,17 @@
+@use "../abstracts/functions" as fn;
 @use "../abstracts/mixins";
 @use "../abstracts/variables";
 
 .product_details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 30px 7%;
+    gap: fn.rem(30);
+    padding: fn.rem(30) 7%;
 
     .product_details_gallery {
         @include mixins.flex-row;
 
-        gap: 10px;
+        gap: fn.rem(10);
 
         .product_details_image {
             flex: 1;
@@ -19,20 +20,20 @@
             .product_details_image-element {
                 display: block;
                 width: 100%;
-                height: 500px;
+                height: fn.rem(500);
                 object-fit: cover;
-                border-radius: 20px;
+                border-radius: fn.rem(20);
                 background-color: variables.$bg-gray;
             }
         }
     }
 
     .product_details_info {
-        padding: 10px 0;
+        padding: fn.rem(10) 0;
 
         .product_details_title {
-            margin: 0 0 10px;
-            font-size: clamp(30px, 4vw, 48px);
+            margin: 0 0 fn.rem(10);
+            font-size: clamp(fn.rem(30), 4vw, fn.rem(48));
             line-height: 1.1;
             font-weight: 700;
         }
@@ -41,16 +42,16 @@
             @include mixins.flex-row;
 
             align-items: center;
-            gap: 10px;
-            margin: 0 0 15px;
+            gap: fn.rem(10);
+            margin: 0 0 fn.rem(15);
 
             .product_rating-stars {
                 color: variables.$star-color;
-                font-size: 22px;
+                font-size: fn.rem(22);
             }
 
             .product_rating-value {
-                font-size: 14px;
+                font-size: fn.rem(14);
             }
         }
 
@@ -58,58 +59,58 @@
             @include mixins.flex-row;
 
             align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: fn.rem(12);
+            margin-bottom: fn.rem(20);
 
             .product_price-current {
-                font-size: 28px;
+                font-size: fn.rem(28);
                 font-weight: 700;
             }
 
             .product_price-old {
                 color: #999;
-                font-size: 24px;
+                font-size: fn.rem(24);
                 text-decoration: variables.$text-line-through;
             }
 
             .product_discount {
-                padding: 6px 10px;
+                padding: fn.rem(6) fn.rem(10);
                 border: none;
-                border-radius: 20px;
+                border-radius: fn.rem(20);
                 background-color: variables.$discount-bg-color;
                 color: variables.$discount-color;
-                font-size: 13px;
+                font-size: fn.rem(13);
             }
         }
 
         .product_description {
-            max-width: 550px;
+            max-width: fn.rem(550);
             margin: 0;
-            padding-bottom: 20px;
+            padding-bottom: fn.rem(20);
             border-bottom: 1px solid #ddd;
             color: variables.$text-gray;
-            font-size: 14px;
+            font-size: fn.rem(14);
             line-height: 1.6;
         }
 
         .product_option {
-            padding: 15px 0;
+            padding: fn.rem(15) 0;
             border-bottom: 1px solid #ddd;
 
             .product_option-title {
-                margin: 0 0 12px;
+                margin: 0 0 fn.rem(12);
                 color: #777;
-                font-size: 14px;
+                font-size: fn.rem(14);
             }
 
             .color_options {
                 @include mixins.flex-row;
 
-                gap: 12px;
+                gap: fn.rem(12);
 
                 .color {
-                    width: 28px;
-                    height: 28px;
+                    width: fn.rem(28);
+                    height: fn.rem(28);
                     border: none;
                     border-radius: 50%;
                     cursor: pointer;
@@ -131,12 +132,12 @@
             .size_options {
                 @include mixins.flex-row;
 
-                gap: 8px;
+                gap: fn.rem(8);
 
                 .size_option {
                     border: none;
-                    border-radius: 20px;
-                    padding: 10px 18px;
+                    border-radius: fn.rem(20);
+                    padding: fn.rem(10) fn.rem(18);
                     background-color: variables.$bg-gray;
                     color: variables.$text-gray;
                     cursor: pointer;
@@ -152,39 +153,39 @@
         .product_actions {
             @include mixins.flex-row;
 
-            gap: 12px;
-            margin-top: 15px;
+            gap: fn.rem(12);
+            margin-top: fn.rem(15);
 
             .quantity {
                 @include mixins.flex-row;
 
                 align-items: center;
                 justify-content: space-between;
-                width: 110px;
-                padding: 8px 15px;
-                border-radius: 30px;
+                width: fn.rem(110);
+                padding: fn.rem(8) fn.rem(15);
+                border-radius: fn.rem(30);
                 background-color: variables.$bg-gray;
 
                 .quantity_button {
                     border: none;
                     background: transparent;
-                    font-size: 22px;
+                    font-size: fn.rem(22);
                     cursor: pointer;
                 }
 
                 .quantity_value {
-                    font-size: 15px;
+                    font-size: fn.rem(15);
                 }
             }
 
             .add_to_cart {
                 flex: 1;
                 border: none;
-                border-radius: 30px;
+                border-radius: fn.rem(30);
                 background-color: variables.$black-color;
                 color: variables.$white-color;
                 cursor: pointer;
-                font-size: 15px;
+                font-size: fn.rem(15);
             }
         }
     }
@@ -192,23 +193,23 @@
 
 .product_reviews {
     width: 95%;
-    max-width: 1200px;
-    margin: 50px auto;
+    max-width: fn.rem(1200);
+    margin: fn.rem(50) auto;
 
     .product_reviews_header {
         @include mixins.flex-row;
 
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 24px;
+        margin-bottom: fn.rem(24);
 
         .product_reviews_title {
             margin: 0;
-            font-size: 24px;
+            font-size: fn.rem(24);
 
             .product_reviews_count {
                 font-family: variables.$font-family;
-                font-size: 14px;
+                font-size: fn.rem(14);
                 font-weight: 400;
                 color: #777;
             }
@@ -218,7 +219,7 @@
             @include mixins.flex-row;
 
             align-items: center;
-            gap: 10px;
+            gap: fn.rem(10);
 
             .filter_button,
             .sort_button,
@@ -228,38 +229,38 @@
             }
 
             .filter_button {
-                width: 42px;
-                height: 42px;
+                width: fn.rem(42);
+                height: fn.rem(42);
                 border-radius: 50%;
                 background-color: #f2f2f2;
 
                 .filter_button_icon {
-                    width: 20px;
-                    height: 20px;
+                    width: fn.rem(20);
+                    height: fn.rem(20);
                 }
             }
 
             .sort_button {
-                height: 42px;
-                padding: 0 18px;
-                border-radius: 22px;
+                height: fn.rem(42);
+                padding: 0 fn.rem(18);
+                border-radius: fn.rem(22);
                 background-color: #f2f2f2;
 
                 .sort_button_icon {
-                    margin-left: 10px;
-                    padding: 1px;
+                    margin-left: fn.rem(10);
+                    padding: fn.rem(1);
 
                     .sort_icon {
-                        width: 12px;
-                        height: 12px;
+                        width: fn.rem(12);
+                        height: fn.rem(12);
                     }
                 }
             }
 
             .write_review {
-                height: 42px;
-                padding: 0 22px;
-                border-radius: 22px;
+                height: fn.rem(42);
+                padding: 0 fn.rem(22);
+                border-radius: fn.rem(22);
                 background-color: variables.$black-color;
                 color: variables.$white-color;
             }
@@ -269,13 +270,13 @@
     .reviews_grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: fn.rem(16);
 
         .review_card {
-            min-height: 180px;
-            padding: 20px;
+            min-height: fn.rem(180);
+            padding: fn.rem(20);
             border: 1px solid #e5e5e5;
-            border-radius: 16px;
+            border-radius: fn.rem(16);
 
             .review_top {
                 @include mixins.flex-row;
@@ -285,8 +286,8 @@
 
                 .review_stars {
                     color: variables.$star-color;
-                    font-size: 18px;
-                    letter-spacing: 2px;
+                    font-size: fn.rem(18);
+                    letter-spacing: fn.rem(2);
                 }
 
                 .review_menu {
@@ -298,68 +299,68 @@
             }
 
             .review_name {
-                margin: 10px 0;
-                font-size: 16px;
+                margin: fn.rem(10) 0;
+                font-size: fn.rem(16);
 
                 .verified {
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
-                    width: 16px;
-                    height: 16px;
+                    width: fn.rem(16);
+                    height: fn.rem(16);
                     border-radius: 50%;
                     background-color: #08a63c;
                     color: variables.$white-color;
-                    font-size: 10px;
+                    font-size: fn.rem(10);
                 }
             }
 
             .review_text {
-                margin-bottom: 16px;
+                margin-bottom: fn.rem(16);
                 color: variables.$text-gray;
-                font-size: 13px;
+                font-size: fn.rem(13);
                 line-height: 1.5;
             }
 
             .review_date {
                 color: #777;
-                font-size: 11px;
+                font-size: fn.rem(11);
             }
         }
     }
 
     .load_reviews {
         display: block;
-        margin: 20px auto 0;
-        padding: 12px 28px;
+        margin: fn.rem(20) auto 0;
+        padding: fn.rem(12) fn.rem(28);
         border: 1px solid #ddd;
-        border-radius: 25px;
+        border-radius: fn.rem(25);
         background-color: variables.$white-color;
         cursor: pointer;
     }
 }
 
 .arrivals {
-    padding-top: 50px;
+    padding-top: fn.rem(50);
 }
 
 @media (max-width: variables.$breakpoint-tablet) {
 
     .product_details {
         grid-template-columns: 1fr;
-        padding: 30px 5%;
+        padding: fn.rem(30) 5%;
 
         .product_details_gallery {
             .product_details_image {
                 .product_details_image-element {
-                    height: 450px;
+                    height: fn.rem(450);
                 }
             }
         }
 
         .product_details_info {
             .product_details_title {
-                font-size: 36px;
+                font-size: fn.rem(36);
             }
         }
     }
@@ -376,19 +377,19 @@
     .product_details {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        padding: 20px 16px;
+        gap: fn.rem(20);
+        padding: fn.rem(20) fn.rem(16);
 
         .product_details_gallery {
             flex-direction: column-reverse;
-            gap: 10px;
+            gap: fn.rem(10);
 
             .product_details_image {
                 width: 100%;
 
                 .product_details_image-element {
-                    height: 350px;
-                    border-radius: 15px;
+                    height: fn.rem(350);
+                    border-radius: fn.rem(15);
                 }
             }
         }
@@ -397,21 +398,21 @@
             padding: 0;
 
             .product_details_title {
-                font-size: 28px;
+                font-size: fn.rem(28);
             }
 
             .product_price {
                 .product_price-current {
-                    font-size: 24px;
+                    font-size: fn.rem(24);
                 }
 
                 .product_price-old {
-                    font-size: 20px;
+                    font-size: fn.rem(20);
                 }
             }
 
             .product_description {
-                font-size: 13px;
+                font-size: fn.rem(13);
             }
 
             .product_option {
@@ -419,7 +420,7 @@
                     flex-wrap: wrap;
 
                     .size_option {
-                        padding: 9px 15px;
+                        padding: fn.rem(9) fn.rem(15);
                     }
                 }
             }
@@ -428,23 +429,23 @@
                 width: 100%;
 
                 .quantity {
-                    width: 100px;
+                    width: fn.rem(100);
                 }
             }
         }
     }
 
     .product_reviews {
-        width: calc(100% - 32px);
-        margin: 40px auto;
+        width: calc(100% - fn.rem(32));
+        margin: fn.rem(40) auto;
 
         .product_reviews_header {
             flex-direction: column;
             align-items: flex-start;
-            gap: 15px;
+            gap: fn.rem(15);
 
             .product_reviews_title {
-                font-size: 20px;
+                font-size: fn.rem(20);
             }
 
             .review_actions {
@@ -452,28 +453,28 @@
                 justify-content: flex-end;
 
                 .filter_button {
-                    width: 38px;
-                    height: 38px;
+                    width: fn.rem(38);
+                    height: fn.rem(38);
                 }
 
                 .sort_button {
-                    height: 38px;
+                    height: fn.rem(38);
                 }
 
                 .write_review {
-                    height: 38px;
-                    padding: 0 16px;
+                    height: fn.rem(38);
+                    padding: 0 fn.rem(16);
                 }
             }
         }
 
         .reviews_grid {
             grid-template-columns: 1fr;
-            gap: 12px;
+            gap: fn.rem(12);
 
             .review_card {
                 min-height: auto;
-                padding: 16px;
+                padding: fn.rem(16);
             }
         }
     }
