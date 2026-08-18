@@ -89,9 +89,10 @@
                 .footer_logo {
                     margin: 0 0 18px;
                     font-size: clamp(24px, 2vw, 32px);
-                    font-weight: 900;
+                    font-weight: 700;
                     line-height: 1;
                     color: variables.$black-color;
+                    margin-left: -4em;
                 }
             }
 
